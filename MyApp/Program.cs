@@ -58,6 +58,28 @@ class Rectangle : Shape
     }
 }
 
+// Task 3: Interfaces
+interface IMovable
+{
+    void Move();
+}
+
+class Car : IMovable
+{
+    public void Move()
+    {
+        Console.WriteLine("Car is moving");
+    }
+}
+
+class Bicycle : IMovable
+{
+    public void Move()
+    {
+        Console.WriteLine("Bicycle is moving");
+    }
+}
+
 class Program
 {
     static void Main()
@@ -77,5 +99,12 @@ class Program
         Shape rectangle = new Rectangle(4, 6);
         Console.WriteLine($"Circle area: {circle.GetArea()}");
         Console.WriteLine($"Rectangle area: {rectangle.GetArea()}");
+
+        // Task 3
+        Console.WriteLine("\n=== Interfaces ===");
+        IMovable car = new Car();
+        IMovable bicycle = new Bicycle();
+        car.Move();
+        bicycle.Move();
     }
 }
